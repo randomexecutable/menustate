@@ -18,28 +18,26 @@ end
 class MainMenu < MenuState
   
   def setup
-    super({ :menu_items => [:start, :options, :quit] })
+    super({ :menu_items => [:start, :options, :quit]})
   end
   
   def start_oper
-    puts "start operation!"
+    puts "Start operation selected"
   end
   
   def options_oper
-    puts "options operation!"
+    puts "Entering options menu"
     push_game_state(OptionsMenu)
   end
   
 end
 
 
-# check the options: warp_menu and new_keys from menustate.rb
+# Check the options: warp_menu, force_setup and new_keys from menustate.rb
 class OptionsMenu < MenuState
   
   def setup
-    super
     super({ :menu_items => [:back, :graphics, :sound]})
-    
   end
   
   def graphics_oper

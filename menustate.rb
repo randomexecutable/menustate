@@ -59,7 +59,9 @@ class MenuState < Chingu::GameState
     $window.close
   end
   
+  # :force_setup => forces to run the setup for the old menu when going back
   def back_oper(options={})
+    options[:setup] = false unless options.include?(:force_setup)
     pop_game_state(options)
   end
   
